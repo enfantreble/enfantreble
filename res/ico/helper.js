@@ -5,8 +5,8 @@ function createStatusPanel() {
     statusPanel.style.position = 'fixed';
     statusPanel.style.top = '2vh';
     statusPanel.style.right = '2vw';
-    statusPanel.style.width = 'calc(50vw - 4px)';
-    statusPanel.style.height = 'calc(25vh - 4px)';
+    statusPanel.style.width = 'calc(20vw - 4px)';
+    statusPanel.style.height = 'calc(45vh - 4px)';
     statusPanel.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
     statusPanel.style.color = 'white';
     statusPanel.style.border = '2px solid white';
@@ -36,9 +36,9 @@ function elementReady(selector) {
                 observer.disconnect();
             });
         })
-        .observe(document.documentElement, {
-            childList: true,
-            subtree: true
-        });
+            .observe(document.documentElement, {
+                childList: true,
+                subtree: true
+            });
     });
 }
