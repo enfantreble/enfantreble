@@ -1,0 +1,15 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+    <style type="text/css">
+        .red {
+            fill: none;
+            stroke: #bb277d;
+            stroke-width: 9.95;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+    </style>
+    <circle cx="64" cy="64" r="64" fill="#0094ff" />
+    <circle cx="64" cy="64" r="40" fill="#e1f88c" />
+    <line class='red' x1="34" y1="63" x2="96" y2="63" />
+    <line class='red' y1="34" x1="63" y2="96" x2="63" />
+</svg>
