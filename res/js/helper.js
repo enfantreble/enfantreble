@@ -42,3 +42,50 @@ function elementReady(selector) {
             });
     });
 }
+
+function waitForElement(selector) {
+    return new Promise((resolve) => {
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.addedNodes.length) {
+                    const element = document.querySelector(selector);
+                    if (element) {
+                        observer.disconnect();
+                        resolve(element);
+                    }
+                }
+            });
+        });
+
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+
+        // Check if the element is already present
+        const element = document.querySelector(selector);
+        if (element) {
+            observer.disconnect();
+            resolve(element);
+        }
+    });
+}
+
+function createSelectorFromHTML(html) {
+    // Create a temporary element to parse the HTML
+    const tempElement = document.createElement('div');
+    tempElement.innerHTML = html.trim();
+    const element = tempElement.firstChild;
+
+    // Start building the selector string
+    let selector = element.tagName.toLowerCase();
+
+    // Add attributes to the selector
+    Array.from(element.attributes).forEach(attr => {
+        if (attr.name !== 'class') { // Ignore class names
+            selector += `[${attr.name}="${attr.value}"]`;
+        }
+    });
+
+    return selector;
+}
