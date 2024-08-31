@@ -13,9 +13,7 @@ async function findPerformer(name) {
             }
         }
     `;
-    const variables = {
-        q: name
-    };
+    const variables = { q: name };
     const response = await fetch(API_URL, {
         method: 'POST',
         headers: {
@@ -38,9 +36,7 @@ async function createPerformer(performerDetails) {
             }
         }
     `;
-    const variables = {
-        input: performerDetails
-    };
+    const variables = { input: performerDetails };
     const response = await fetch(API_URL, {
         method: 'POST',
         headers: {
@@ -51,3 +47,5 @@ async function createPerformer(performerDetails) {
     const data = await response.json();
     return data.data.performerCreate;
 }
+
+console.log("GraphQL Interface script loaded.");
