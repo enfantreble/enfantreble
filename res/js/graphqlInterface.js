@@ -1,5 +1,5 @@
 const API_URL = 'http://localhost:9000/graphql';
-
+console.log("graphqlInterface.js loading");
 async function findPerformer(name) {
     const query = `
         query FindPerformers($q: String!) {
