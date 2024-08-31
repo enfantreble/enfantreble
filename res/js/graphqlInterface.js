@@ -21,6 +21,13 @@ async function findPerformer(name) {
         },
         body: JSON.stringify({ query, variables }),
     });
+
+    if (!response.ok) {
+        const errorText = await response.text();
+        console.error('Error in findPerformer:', errorText);
+        throw new Error(`findPerformer failed: ${response.status} - ${response.statusText}`);
+    }
+
     const data = await response.json();
     return data.data.findPerformers.performers;
 }
@@ -44,8 +51,13 @@ async function createPerformer(performerDetails) {
         },
         body: JSON.stringify({ query: mutation, variables }),
     });
+
+    if (!response.ok) {
+        const errorText = await response.text();
+        console.error('Error in createPerformer:', errorText);
+        throw new Error(`createPerformer failed: ${response.status} - ${response.statusText}`);
+    }
+
     const data = await response.json();
     return data.data.performerCreate;
 }
-
-console.log("GraphQL Interface script loaded.");
