@@ -61,3 +61,4 @@ async function createPerformer(performerDetails) {
     const data = await response.json();
     return data.data.performerCreate;
 }
+console.log("graphqlInterface.js loaded");
