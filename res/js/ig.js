@@ -3,6 +3,7 @@
  * @param {Object} jsonData - The Instagram JSON data.
  * @returns {Map} - A map of media URLs with corresponding filename and username.
  */
+// @version      0.4.5
 function parseJsonInstagram(jsonData) {
     const mediaMap = new Map();
     console.log('parsing');
