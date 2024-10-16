@@ -1,4 +1,5 @@
 // Intercept XHR requests to extract JSON responses based on a URL fragment
+// @version      0.4.5
 function interceptXHR(url_fragment) {
     if (window._xhrIntercepted) return;
 
