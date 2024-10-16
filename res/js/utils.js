@@ -1,3 +1,8 @@
+/**
+ * Helper function to format a Unix timestamp to 'YYYYMMdd_HHmmss'.
+ * @param {number} timestamp - The Unix timestamp (in seconds).
+ * @returns {string} - The formatted timestamp as 'YYYYMMdd_HHmmss'.
+ */
 function formatTimestamp(timestamp) {
     const date = new Date(timestamp * 1000); // Convert to milliseconds
     const year = date.getFullYear();
@@ -7,5 +12,5 @@ function formatTimestamp(timestamp) {
     const minutes = String(date.getMinutes()).padStart(2, '0');
     const seconds = String(date.getSeconds()).padStart(2, '0');
 
-    return `${year}${month}${day}_${hours}${minutes}${seconds}`; // YYYYMMdd_HHmmss
+    return `${year}${month}${day}_${hours}${minutes}${seconds}`; // Format: YYYYMMdd_HHmmss
 }
