@@ -3,6 +3,7 @@
  * @param {number} timestamp - The Unix timestamp (in seconds).
  * @returns {string} - The formatted timestamp as 'YYYYMMdd_HHmmss'.
  */
+// @version      0.4.5
 function formatTimestamp(timestamp) {
     const date = new Date(timestamp * 1000); // Convert to milliseconds
     const year = date.getFullYear();
