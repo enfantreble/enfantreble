@@ -1,6 +1,6 @@
 function sendToAria2(downloadUrl, secret = 'ariaisabitch') {
     const aria2Url = 'http://localhost:6800/jsonrpc';
-
+    console.log('aria call');
     const jsonPayload = JSON.stringify({
         'jsonrpc': '2.0',
         'id': 'qwer',
