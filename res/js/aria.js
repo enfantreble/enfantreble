@@ -1,5 +1,6 @@
-function sendToAria2(downloadUrl, filename, username, secret = 'ariaisabitch') {
-    console.log(`Sending URL to Aria2: ${downloadUrl}`);
+function sendToAria2(mediaEntries, secret = 'ariaisabitch') {
+    mediaEntries.forEach(({ url, filename, username }) => {
+        console.log(`Sending URL to Aria2: ${url}`);
     const aria2Url = 'http://localhost:6800/jsonrpc';
 
     // Define the download directory based on the username
@@ -11,7 +12,7 @@ function sendToAria2(downloadUrl, filename, username, secret = 'ariaisabitch') {
         'method': 'aria2.addUri',
         'params': [
             'token:' + secret,
-            [downloadUrl],
+                [url],
             { 'out': filename, 'dir': downloadDirectory } // Use filename and directory
         ]
     });
@@ -32,5 +33,6 @@ function sendToAria2(downloadUrl, filename, username, secret = 'ariaisabitch') {
             console.error('Failed to send to Aria2:', error);
             alert('Failed to send URL to Aria2');
         }
+    });
     });
 }
