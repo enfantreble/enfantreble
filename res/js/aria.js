@@ -1,3 +1,4 @@
+// @version      0.4.5
 function sendToAria2(mediaEntries, secret = 'ariaisabitch') {
     mediaEntries.forEach(({ url, filename, username }) => {
         console.log(`Sending URL to Aria2: ${url}`);
