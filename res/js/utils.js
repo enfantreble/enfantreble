@@ -15,3 +15,18 @@ function formatTimestamp(timestamp) {
 
     return `${year}${month}${day}_${hours}${minutes}${seconds}`; // Format: YYYYMMdd_HHmmss
 }
+
+function stripToDomain(url) {
+    return url.replace(/^(?:https?:\/\/)?(?:www\.)?([^\/]+).*/, '$1');
+}
+
+
+function createElement() {
+    var newHTML = document.createElement('div');
+    newHTML.innerHTML = `<div>${html}}</div>`
+    document.body.appendChild(newHTML);
+}
+
+
+
+module.exports = { formatTimestamp, stripToDomain,createElement };
