@@ -94,3 +94,87 @@ button {
 button:not(:disabled), [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled) {
     cursor: pointer;
 }
+
+/* Overlay container */
+.overlay-panel {
+    position: fixed;
+    top: 50px;
+    left: 10%;
+    width: 80%;
+    max-height: 90%;
+    background-color: rgba(73, 91, 104, 0.8);
+    border-radius: 30px;
+    padding: 20px;
+    z-index: 9999;
+    overflow-y: auto;
+    text-align: left;
+    color: white;
+}
+
+/* Floating button */
+.floating-button {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    z-index: 10000;
+    cursor: pointer;
+}
+
+/* Overlay title */
+.overlay-title {
+    color: white;
+}
+
+/* Input field styling */
+.input-field {
+    background-color: #384751;
+    color: white;
+}
+
+/* List item container for links */
+.link-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.link-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Image container */
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.image-wrapper {
+    overflow: hidden;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.selectable-image {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.selectable-image:hover {
+    transform: scale(1.05);
+}
+
+.selected-image {
+    border: 3px solid #4CAF50;
+}
+
+/* Submit button styling */
+.submit-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
