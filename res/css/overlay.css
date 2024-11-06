@@ -26,13 +26,33 @@
     cursor: pointer;
     z-index: 10000;
 }
+.btn-close {
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    background: none;
+    border: none;
+    color: red;
+    font-size: 16px;
+    cursor: pointer;
+}
 
-/* Overlay title */
 .overlay-title {
     color: white;
 }
 
-/* Input field styling */
+.submit-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
 .input-field {
     background-color: #384751;
     color: white;
@@ -82,30 +102,6 @@
     border: 3px solid #4CAF50;
 }
 
-/* Close button */
-.btn-close {
-    position: absolute;
-    top: 10px;
-    right: 50px;
-    background: none;
-    border: none;
-    color: red;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-/* Submit button styling */
-.submit-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 5px 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
 
 /* Danger button for removing links */
 .btn-danger {
@@ -124,3 +120,5 @@
 .btn-danger:active {
     background-color: #af2c2c;
 }
+
+
