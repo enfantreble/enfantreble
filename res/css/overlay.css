@@ -31,16 +31,7 @@
     cursor: pointer;
     z-index: 10000;
 }
-.btn-close {
-    position: absolute;
-    top: 10px;
-    right: 50px;
-    background: none;
-    border: none;
-    color: red;
-    font-size: 16px;
-    cursor: pointer;
-}
+
 .overlay-title {
     color: white;
 }
