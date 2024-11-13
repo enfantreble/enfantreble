@@ -78,6 +78,8 @@
 /* Image container */
 .image-container {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     gap: 20px;
 }
@@ -95,11 +97,14 @@
 }
 
 .selectable-image:hover {
-    transform: scale(1.05);
+    position: relative;
+    transform-origin: center;
+    align-items: center;
+    transform: scale(1.25);
 }
 
 .selected-image {
-    border: 3px solid #4CAF50;
+    border: 30px solid #FFFF00;
 }
 
 
