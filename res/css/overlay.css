@@ -12,6 +12,15 @@
     text-align: left;
     color: white;
 }
+.overlay-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9989;
+}
 .button-container {
     display: flex;
     justify-content: space-between;
@@ -32,9 +41,6 @@
     z-index: 10000;
 }
 .btn-close {
-    position: absolute;
-    top: 10px;
-    right: 50px;
     background: none;
     border: none;
     color: red;
@@ -44,11 +50,7 @@
 .overlay-title {
     color: white;
 }
-
 .submit-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
     padding: 5px 10px;
     background-color: #4CAF50;
     color: white;
@@ -56,7 +58,6 @@
     cursor: pointer;
     border-radius: 5px;
 }
-
 .input-field {
     background-color: #384751;
     color: white;
@@ -66,19 +67,16 @@
     border-radius: 4px;
     margin-bottom: 10px;
 }
-
 /* List item container for links */
 .link-list {
     list-style-type: none;
     padding-left: 0;
 }
-
 .link-item {
     display: flex;
     align-items: center;
     gap: 5px;
 }
-
 .image-container {
     display: flex;
     justify-content: center;
@@ -86,13 +84,11 @@
     flex-wrap: wrap;
     gap: 20px;
 }
-
 .image-wrapper {
-    overflow: visible; /* Allow image to extend beyond wrapper */
+    overflow: visible;
     border-radius: 5px;
     cursor: pointer;
 }
-
 .selectable-image {
     width: 100%;
     height: auto;
@@ -100,27 +96,17 @@
     max-height: 500px;
     transition: transform 0.3s ease;
 }
-
 .selectable-image:hover {
     transform-origin: center;
-    transform: scale(1.25); /* Scales outside wrapper */
-    z-index: 1; /* Brings image to the front when hovering */
+    transform: scale(1.25);
+    z-index: 1;
 }
-
 .selected-image {
-    border: 10px solid #FFFF00; /* Thick yellow border for highlight */
-    border-radius: 5px; /* Matches image corners */
-    box-sizing: border-box; /* Keeps border within image dimensions */
-    z-index: 2; /* Ensures selected image stays on top */
+    border: 10px solid #FFFF00;
+    border-radius: 5px;
+    box-sizing: border-box;
+    z-index: 2;
 }
-
-/* Optional glow effect for additional emphasis */
-.selected-image {
-    box-shadow: 0 0 15px rgba(255, 255, 0, 0.7); /* Adds a yellow glow */
-}
-
-
-/* Danger button for removing links */
 .btn-danger {
     background-color: #db3737;
     color: white;
@@ -129,13 +115,9 @@
     cursor: pointer;
     border-radius: 4px;
 }
-
 .btn-danger:hover {
     background-color: #ba2f2f;
 }
-
 .btn-danger:active {
     background-color: #af2c2c;
 }
-
-
