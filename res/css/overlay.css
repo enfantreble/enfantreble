@@ -12,7 +12,12 @@
     text-align: left;
     color: white;
 }
-
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+}
 /* Floating button */
 .floating-button {
     position: fixed;
@@ -36,7 +41,6 @@
     font-size: 16px;
     cursor: pointer;
 }
-
 .overlay-title {
     color: white;
 }
@@ -75,7 +79,6 @@
     gap: 5px;
 }
 
-/* Image container */
 .image-container {
     display: flex;
     justify-content: center;
@@ -85,7 +88,7 @@
 }
 
 .image-wrapper {
-    overflow: hidden;
+    overflow: visible; /* Allow image to extend beyond wrapper */
     border-radius: 5px;
     cursor: pointer;
 }
@@ -93,18 +96,27 @@
 .selectable-image {
     width: 100%;
     height: auto;
+    max-width: 500px;
+    max-height: 500px;
     transition: transform 0.3s ease;
 }
 
 .selectable-image:hover {
-    position: relative;
     transform-origin: center;
-    align-items: center;
-    transform: scale(1.25);
+    transform: scale(1.25); /* Scales outside wrapper */
+    z-index: 1; /* Brings image to the front when hovering */
 }
 
 .selected-image {
-    border: 30px solid #FFFF00;
+    border: 10px solid #FFFF00; /* Thick yellow border for highlight */
+    border-radius: 5px; /* Matches image corners */
+    box-sizing: border-box; /* Keeps border within image dimensions */
+    z-index: 2; /* Ensures selected image stays on top */
+}
+
+/* Optional glow effect for additional emphasis */
+.selected-image {
+    box-shadow: 0 0 15px rgba(255, 255, 0, 0.7); /* Adds a yellow glow */
 }
 
 
