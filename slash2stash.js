@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Slash 2 Stash
-// @version      2024.11.24.build_00.04.01
+// @version      2024.11.24.build_00.22.30
 // @description  Overlay to extract info, make all fields editable, select one image for JSON POST with CORS support
 // @match        *://*/*
 // @grant        GM_xmlhttpRequest
@@ -14,7 +14,7 @@
 
 (function () {
         'use strict';
-        const VERSION_BUILD = '2024.11.24.build_00.04.01';
+        const VERSION_BUILD = '2024.11.24.build_00.22.30';
         const myCss = GM_getResourceText("MYCSS");
         GM_addStyle(myCss);
         
@@ -81,7 +81,9 @@
             
             document.getElementById('minWidth').addEventListener('input', updateImageFilters);
             document.getElementById('minHeight').addEventListener('input', updateImageFilters);
-            updateImageContainer();
+
+    // Trigger the image filter update directly
+    updateImageFilters();
             
             overlay.querySelectorAll('.btn-remove').forEach(button => button.addEventListener('click', function () {
                 this.parentNode.remove();

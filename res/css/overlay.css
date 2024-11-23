@@ -90,26 +90,38 @@
     align-items: center;
     gap: 5px;
 }
-.slider input[type="range" i]::-webkit-slider-runnable-track {
-    width: 200px; /* Set the width to 200px */
-    height: 10px; /* Set a thicker height for the track */
-    background: blue; /* Set the background color to blue */
-    border: none; /* Remove any border */
+.slider input[type="range" i] {
+    -webkit-appearance: none; /* Remove default appearance */
+    width: 200px; /* Set the width of the slider */
+    height: 10px; /* Set the height of the slider */
+    background: linear-gradient(to right, blue 0%, blue var(--value), white var(--value), white 100%);
     border-radius: 5px; /* Set the border radius */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    display: block; /* Make it a block-level element */
-    margin: 0; /* Remove any default margin */
+    outline: none; /* Remove outline */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
 }
 
-.slider {
-    position: absolute; /* Position the sliders absolutely */
-    top: 0; /* Align to the top */
-    left: 0; /* Align to the left */
-    margin-top: 10px; /* Add some margin to the top */
+/* Style the thumb */
+.slider input[type="range" i]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Remove default appearance */
+    width: 20px; /* Set the width of the thumb */
+    height: 20px; /* Set the height of the thumb */
+    background: #007bff; /* Set the background color of the thumb */
+    border-radius: 50%; /* Make the thumb circular */
+    cursor: pointer; /* Change cursor to pointer */
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5); /* Add a shadow to the thumb */
 }
 
-.slider + .slider {
-    margin-top: 20px; /* Add space between the sliders */
+/* Update the background gradient based on the slider value */
+.slider input[type="range" i] {
+    --value: 50%; /* Default value, can be updated dynamically */
+}
+
+.slider input[type="range" i]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 100%;
+    background: transparent; /* Make the track background transparent */
+    border-radius: 5px; /* Set the border radius */
 }
 
 .image-container {
