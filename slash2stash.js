@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Slash 2 Stash
-// @version      2024.11.23.build_23.20.41
+// @version      2024.11.24.build_00.04.01
 // @description  Overlay to extract info, make all fields editable, select one image for JSON POST with CORS support
 // @match        *://*/*
 // @grant        GM_xmlhttpRequest
@@ -14,7 +14,7 @@
 
 (function () {
         'use strict';
-        const VERSION_BUILD = '2024.11.23.build_23.20.41';
+        const VERSION_BUILD = '2024.11.24.build_00.04.01';
         const myCss = GM_getResourceText("MYCSS");
         GM_addStyle(myCss);
         
@@ -25,7 +25,6 @@
         
         let selectedImage = "";
         let minWidth = 600, minHeight = 400;
-        
         createButton.addEventListener('click', showOverlay);
         
         function showOverlay() {
