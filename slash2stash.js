@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Slash 2 Stash
-// @version      2024.11.24.build_00.22.30
+// @version      2024.11.24.build_00.36.48
 // @description  Overlay to extract info, make all fields editable, select one image for JSON POST with CORS support
 // @match        *://*/*
 // @grant        GM_xmlhttpRequest
@@ -14,7 +14,7 @@
 
 (function () {
         'use strict';
-        const VERSION_BUILD = '2024.11.24.build_00.22.30';
+        const VERSION_BUILD = '2024.11.24.build_00.36.48';
         const myCss = GM_getResourceText("MYCSS");
         GM_addStyle(myCss);
         
@@ -67,12 +67,12 @@
             </ul>
             <div>
                 <label for="minWidth">Min Width:</label>
-                <input type="range" id="minWidth" min="0" max="2000" step="50" value="${minWidth}">
+                <input type="range" id="minWidth" min="0" max="2000" step="10" value="${minWidth}">
                 <span id="minWidthValue">${minWidth}px</span>
             </div>
             <div>
                 <label for="minHeight">Min Height:</label>
-                <input type="range" id="minHeight" min="0" max="2000" step="50" value="${minHeight}">
+                <input type="range" id="minHeight" min="0" max="2000" step="10" value="${minHeight}">
                 <span id="minHeightValue">${minHeight}px</span>
                </div>
             </div>
@@ -112,7 +112,6 @@
                     if (!response.ok) {
                         throw new Error(`Failed to fetch image: ${response.statusText}`);
                     }
-                    
                     
                     const base64Image = canvas.toDataURL("image/png");
                     console.log("Extracted Base64 Image:", base64Image);
