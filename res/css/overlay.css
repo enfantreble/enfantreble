@@ -12,6 +12,9 @@
     text-align: left;
     color: white;
 }
+.overlay-panel * {
+    all: initial;
+}
 .overlay-background {
     position: fixed;
     top: 0;
