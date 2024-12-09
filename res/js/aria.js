@@ -43,23 +43,4 @@ function sendToAria2(aria2Token, url, filename, directory, retries = 3, delay = 
     };
     
     fetchWithRetry('http://localhost:16800/jsonrpc', options, retries, delay, onSuccess, onError);
-}
-
-// Example usage:
-sendToAria2(
-    "my_aria2_token",
-    "download_url",
-    "filename.ext",
-    "download/path",
-    5,
-    2000,
-    function (response) {  // onSuccess callback
-        console.log('Aria2 response:', response);
-        // Handle successful response here
-    },
-    function (error) {     // onError callback
-        console.error('Error:', error);
-        alert("Failed to send to Aria2: " + error.message);
-        // Handle error here
-    }
-);
+};
